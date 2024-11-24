@@ -57,5 +57,5 @@ const generateSitemap = async () => {
   console.log("Sitemap generated at public/sitemap.xml");
 };
 
-// Run the script
+// Run the scripts
 generateSitemap();
