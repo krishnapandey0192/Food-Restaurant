@@ -3,19 +3,19 @@ import { SitemapStream, streamToPromise } from "sitemap";
 import fs from "fs";
 
 // Fetch dynamic restaurant IDs
-const fetchDynamicRestaurantIds = async () => {
-  try {
-    const response = await fetch(
-      "https://food-explorer-server-prime.vercel.app/api/food-explorer/restaurants",
-      { headers: { apikey: "12233344445678" } }
-    ); // Replace with your actual endpoint
-    const restaurants = await response.json();
-    return restaurants.map((restaurant) => restaurant.id); // Assuming each restaurant has an `id` field
-  } catch (error) {
-    console.error("Error fetching restaurant IDs:", error);
-    return [];
-  }
-};
+// const fetchDynamicRestaurantIds = async () => {
+//   try {
+//     const response = await fetch(
+//       "https://food-explorer-server-prime.vercel.app/api/food-explorer/restaurants",
+//       { headers: { apikey: "12233344445678" } }
+//     ); // Replace with your actual endpoint
+//     const restaurants = await response.json();
+//     return restaurants.map((restaurant) => restaurant.id); // Assuming each restaurant has an `id` field
+//   } catch (error) {
+//     console.error("Error fetching restaurant IDs:", error);
+//     return [];
+//   }
+// };
 
 // Generate sitemap
 const generateSitemap = async () => {
@@ -29,17 +29,17 @@ const generateSitemap = async () => {
   ];
 
   // Fetch dynamic routes
-  const restaurantIds = await fetchDynamicRestaurantIds();
+  //   const restaurantIds = await fetchDynamicRestaurantIds();
   // const searchTerms = await fetchDynamicSearchTerms();
 
-  const dynamicRestaurantRoutes = restaurantIds.map((id) => ({
-    url: `/restaurants/${id}`,
-    changefreq: "daily",
-    priority: 0.9,
-  }));
+  //   const dynamicRestaurantRoutes = restaurantIds.map((id) => ({
+  //     url: `/restaurants/${id}`,
+  //     changefreq: "daily",
+  //     priority: 0.9,
+  //   }));
 
   // Combine all routes
-  const allRoutes = [...staticRoutes, ...dynamicRestaurantRoutes];
+  const allRoutes = [...staticRoutes];
 
   // Create sitemap
   const sitemap = new SitemapStream({
