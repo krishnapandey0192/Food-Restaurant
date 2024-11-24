@@ -1,6 +1,6 @@
-import fetch from 'node-fetch'; // Importing node-fetch as ES module
-import { SitemapStream, streamToPromise } from 'sitemap';
-import fs from 'fs';
+import fetch from "node-fetch"; // Importing node-fetch as ES module
+import { SitemapStream, streamToPromise } from "sitemap";
+import fs from "fs";
 
 // Fetch dynamic restaurant IDs
 const fetchDynamicRestaurantIds = async () => {
@@ -42,7 +42,9 @@ const generateSitemap = async () => {
   const allRoutes = [...staticRoutes, ...dynamicRestaurantRoutes];
 
   // Create sitemap
-  const sitemap = new SitemapStream({ hostname: "https://food-restaurant-iota.vercel.app" });
+  const sitemap = new SitemapStream({
+    hostname: "https://food-restaurant-iota.vercel.app/",
+  });
 
   allRoutes.forEach((route) => sitemap.write(route));
   sitemap.end();

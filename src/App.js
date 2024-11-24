@@ -36,7 +36,7 @@ function App() {
               />
               <meta
                 name="keywords"
-                content="food, restaurant, meals, dining, pizza, burgers, restaurant delivery, best restaurants, food delivery, recipes"
+                content="food, restaurant, meals, dining, pizza, burgers, restaurant delivery, best restaurants, food delivery, recipes, krishna restaurant"
               />
               <meta
                 property="og:title"
