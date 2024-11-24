@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "parcel public/index.html",
-    "build": "parcel build public/index.html",
+    "build": "parcel build public/index.html --public-url ./",
     "test": "jest"
   },
   "author": "Krishna Pandey",
