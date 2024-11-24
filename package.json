@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "parcel public/index.html",
-    "build": "parcel build public/index.html --public-url ./",
+    "build": "parcel build public/index.html && cp-cli public/sitemap.xml dist/sitemap.xml",
     "test": "jest"
   },
   "author": "Krishna Pandey",
@@ -26,6 +26,7 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
+    "cp-cli": "^2.0.0",
     "parcel": "^2.11.0",
     "postcss": "^8.4.35",
     "process": "^0.11.10",
